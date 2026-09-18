@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Reminder App</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <div class="header">
+        <div class="icon">⏰</div>
+        <div>
+          <h1>My Reminder App</h1>
+          <p>Set a reminder and receive an SMS at the selected time.</p>
+        </div>
+      </div>
+
+      <form id="reminderForm">
+        <div class="form-group">
+          <label for="phone">Phone number</label>
+          <input id="phone" type="tel" placeholder="+9779812345678" required>
+          <small>Use the international format, including country code.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Reminder</label>
+          <textarea id="message" rows="4" maxlength="1000"
+            placeholder="Example: Call Mom" required></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="date">Date</label>
+            <input id="date" type="date" required>
+          </div>
+          <div class="form-group">
+            <label for="time">Time</label>
+            <input id="time" type="time" required>
+          </div>
+        </div>
+
+        <button id="submitButton" type="submit">Set Reminder</button>
+      </form>
+
+      <div id="status" class="status hidden"></div>
+    </section>
+
+    <section class="card">
+      <h2>My reminders</h2>
+      <div id="reminders" class="reminders">
+        <p class="muted">Loading reminders...</p>
+      </div>
+    </section>
+
+    <section class="card info-card">
+      <h2>How it works</h2>
+      <ol>
+        <li>Enter a phone number and reminder.</li>
+        <li>Choose the date and time.</li>
+        <li>Click <strong>Set Reminder</strong>.</li>
+        <li>The system checks for due reminders automatically and sends the SMS.</li>
+      </ol>
+      <p class="note">
+        The reminder time is interpreted using your computer's local time zone.
+      </p>
+    </section>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>
